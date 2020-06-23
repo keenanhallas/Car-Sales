@@ -25,11 +25,11 @@ export const carReducer = (state = initialState, action) => {
                 car: {...state.car,
                     features: [...state.car.features, action.payload]}} //is there a better way to do this?
         case REMOVE_FEATURE:
-            // return {
-            //     ...state,
-            //     car: {...state.care,
-            //         features: state.car.features.map(feature => feature.id !== action.payload.id)}
-            // }
+            return {
+                ...state,
+                car: {...state.car,
+                    features: state.car.features.map(feature => feature.id !== action.payload.id)}
+            }
         default:
             return state;
     }
