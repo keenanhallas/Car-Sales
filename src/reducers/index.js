@@ -28,7 +28,7 @@ export const carReducer = (state = initialState, action) => {
             return {
                 ...state,
                 car: {...state.car,
-                    features: state.car.features.map(feature => feature.id !== action.payload.id)}
+                    features: state.car.features.filter(feature => feature.id !== action.payload.id)}
             }
         default:
             return state;
